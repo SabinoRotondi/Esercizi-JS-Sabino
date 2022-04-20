@@ -4,7 +4,7 @@ function sumUntil(maxValue) {
     console.log(`${i} +`)
     sum += i
   }
-  return sum;
+  return `= ${sum}`;
 }
 
 console.log(sumUntil(5));
