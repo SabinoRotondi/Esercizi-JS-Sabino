@@ -2,7 +2,7 @@ function memoize(fn) {
   let cache = {};
   return function (x) {
     if (x in cache) {
-      return 'fetch from cache' + ' ' + fn(x)
+      return 'fetch from cache' + ' ' + cache[x]
     } else {
       cache[x] = fn(x)
       return 'calculating for' + ' ' + fn(x)
