@@ -22,12 +22,12 @@
 </html>
 
 <script>
-  let Label = document.querySelectorAll('label');
-  let Input = document.querySelectorAll('.form-input');
+  let myLabel = document.querySelectorAll('label');
+  let myInput = document.querySelectorAll('.form-input');
   let obj = {};
 
-  for (let i = 0; i < Label.length; i++) {
-    person[Label[i].textContent] = Input[i].value;
+  for (let i = 0; i < myLabel.length; i++) {
+    person[myLabel[i].textContent] = myInput[i].value;
   };
   console.log(obj);
 
