@@ -17,14 +17,12 @@
   function addRow() {
     let dynTr = document.createElement('tr')
     let tdName = document.createElement('td')
-    tdName.innerHTML = 'firstName : '
-    dynTr.append(tdName);
+    tdName.textContent = 'firstName'
     let tdSurname = document.createElement('td')
-    tdSurname.innerHTML = 'lastName : '
-    dynTr.append(tdSurname);
+    tdSurname.textContent = 'lastName'
     let tdAge = document.createElement('td')
-    tdAge.innerHTML = 'age : '
-    dynTr.append(tdAge);
+    tdAge.textContent = 'age'
+    dynTr.append(tdName, tdSurname, tdAge)
     document.querySelector('tbody').append(dynTr)
   }
   
