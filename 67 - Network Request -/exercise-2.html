@@ -1,0 +1,27 @@
+<html>
+
+<body>
+  <div id="container" style="display: flex; align-items: center;"></div>
+</body>
+
+</html>
+
+<script>
+  let classFetch = " ";
+
+  window.addEventListener("load", async () => {
+    await fetch("https://jsonplaceholder.typicode.com/todos/4")
+      .then(response => response.json())
+      .then(json => {
+        classFetch = json.title;
+        console.log('fetch:', classFetch);
+      });
+
+    let dynamicH2 = document.createElement("h2");
+    dynamicH2.innerHTML = classFetch
+    let dynamicCheckbox = document.createElement("input");
+    dynamicCheckbox.type = "checkbox"
+    dynamicCheckbox.setAttribute("checked", true)
+    document.querySelector("#container").appendChild(dynamicH2).appendChild(dynamicCheckbox)
+  })
+</script>

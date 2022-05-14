@@ -1,0 +1,44 @@
+<html>
+
+<body>
+  <div id="container">
+    <form>
+      <div>
+        <label>Title</label>
+        <input type="text" id="todo-title" />
+      </div>
+      <div>
+        <label>Completed</label>
+        <input type="checkbox" id="todo-completed" />
+      </div>
+
+      <button type="submit" id="submit-todo"></button>
+    </form>
+  </div>
+</body>
+
+</html>
+
+<script>
+  async function formSend() {
+    let url = 'https://jsonplaceholder.typicode.com/posts';
+    let myPost = {
+      title: document.querySelector('#todo-title').value,
+      check: document.querySelector('#todo-completed').checked
+    }
+    console.log(myPost)
+    let response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json; charset = utf-8'
+      },
+      body: JSON.stringify()
+    });
+    let result = await response.json();
+    console.log(result)
+  }
+  document.querySelector('#submit-todo').onclick = () => {
+    event.preventDefault();
+    formSend();
+  }
+</script>
