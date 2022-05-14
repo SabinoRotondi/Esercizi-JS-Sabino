@@ -1,0 +1,53 @@
+<html>
+
+<body>
+  <div id="container">
+    <h2>Person's Form</h2>
+    <form id="person-form"></form>
+
+    <button type="submit">Submit</button>
+  </div>
+</body>
+
+</html>
+
+<script>
+  function initForm() {
+    let dynForm = document.querySelector("#person-form");
+    
+    let dynInput = document.createElement("input");
+    dynInput.type = "text";
+    dynInput.id = "firstName";
+    dynInput.value = "John";
+
+    let dynInput2 = document.createElement("input");
+    dynInput2.type = "text";
+    dynInput2.id = "lastName";
+    dynInput2.value = "Doe";
+
+    let dynInput3 = document.createElement("input");
+    dynInput3.type = "number";
+    dynInput3.id = "age";
+    dynInput3.value = "18";
+
+    dynForm.appendChild(dynInput);
+    dynForm.appendChild(dynInput2);
+    dynForm.appendChild(dynInput3);
+  }
+
+  window.addEventListener("load", initForm());
+
+  function submitPersonForm() {
+    event.preventDefault();
+    let person = {
+      firstName: "",
+      lastName: "",
+      age: ""
+    };
+    person.firstName = document.querySelector("#firstName").value;
+    person.lastName = document.querySelector("#lastName").value;
+    person.age = document.querySelector("#age").value;
+    console.log(person);
+  }
+  document.querySelector("button").addEventListener("click", submitPersonForm);
+</script>
