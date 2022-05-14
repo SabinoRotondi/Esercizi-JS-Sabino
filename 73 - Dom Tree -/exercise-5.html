@@ -13,18 +13,16 @@
 </html>
 
 <script>
-
   function addRow() {
     let dynTr = document.createElement('tr')
     let tdName = document.createElement('td')
-    tdName.textContent = 'firstName'
     let tdSurname = document.createElement('td')
-    tdSurname.textContent = 'lastName'
     let tdAge = document.createElement('td')
+    tdName.textContent = 'firstName'
+    tdSurname.textContent = 'lastName'
     tdAge.textContent = 'age'
     dynTr.append(tdName, tdSurname, tdAge)
     document.querySelector('tbody').append(dynTr)
   }
-  
   document.querySelector('#add-row').addEventListener('click', addRow);
 </script>
