@@ -27,9 +27,9 @@
   let obj = {};
 
   for (let i = 0; i < myLabel.length; i++) {
-    person[myLabel[i].textContent] = myInput[i].value;
+    obj[myLabel[i].textContent] = myInput[i].value;
   };
   console.log(obj);
 
-  document.querySelector('form').setAttribute('data-person', JSON.stringify(person));
+  document.querySelector('form').setAttribute('data-person', JSON.stringify(obj));
 </script>
