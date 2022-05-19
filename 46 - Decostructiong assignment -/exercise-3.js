@@ -1,4 +1,5 @@
-function isAdult(age) {
+function isAdult(person) {
+  let { age } = person;
   return age >= 18;
 }
 const person = {
@@ -8,6 +9,4 @@ const person = {
   age: 25
 };
 
-let { age } = person;
-
-console.log(isAdult(age));
+console.log(isAdult(person));
