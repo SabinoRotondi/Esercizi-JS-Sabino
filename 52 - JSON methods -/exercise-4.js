@@ -5,6 +5,6 @@ const person = {
   age: 25
 };
 
-const json = JSON.stringify(person, ['id', 'age']);
+const json = JSON.stringify(person, Object.entries(person).filter((value) => typeof value[1] === 'number').map((arr) => arr[0]));
 
-console.log(json); // Should return: { id: 1, age: 25 }
+console.log(json);
